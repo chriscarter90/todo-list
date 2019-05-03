@@ -18,11 +18,6 @@ import Todo from './Todo'
 
 export default {
   props: ['todos'],
-  data () {
-    return {
-      allTodos: this.todos
-    }
-  },
   components: {
     Todo
   },
@@ -41,6 +36,9 @@ export default {
     }
   },
   computed: {
+    allTodos () {
+      return this.todos
+    },
     completedTasks () {
       return this.allTodos.filter(todo => { return todo.done }).length
     },
